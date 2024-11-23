@@ -11,3 +11,4 @@ The product uses the YOLOv5 model, a lightweight and fast object-detection model
 Currently, the prototype uses stock security camera footage to showcase what it does on a web app.
 
 ## How to run
+wip
