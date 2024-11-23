@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO Security</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px 0;
+            z-index: 1000;
+        }
+
+        .container {
+            margin-top: 120px;
+            /* Adjust based on header height */
+            text-align: center;
+        }
+
+        .video-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>YOLO Security</h1>
+        <h3>Lauren Spee</h3>
+    </div>
+    <div class="container">
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="video/*">
+            <button type="submit">Upload</button>
+        </form>
+        {% if filename %}
+        <div class="video-container">
+            <video width="600" controls>
+                <source src="{{ url_for('static', filename='uploads/' ~ filename) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
