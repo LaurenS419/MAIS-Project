@@ -1,9 +1,15 @@
+import subprocess
+
+def install_large_dependencies():
+    subprocess.run(["pip", "install", "torch==2.5.1", "torchvision==0.20.1"], check=True)
+
+install_large_dependencies()
+
 from flask import Flask, render_template, request, url_for
 import os
 import torch
 import cv2
 import shutil
-import subprocess
 
 app = Flask(__name__)
 
@@ -19,6 +25,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['PROCESSED_FOLDER'] = PROCESSED_FOLDER
 app.config['FRAMES_FOLDER'] = FRAMES_FOLDER
 ALLOWED_EXTENSIONS = {'mp4', 'webm', 'ogg'}
+
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
