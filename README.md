@@ -15,4 +15,4 @@ Currently, the prototype uses stock security camera footage to showcase what it 
 Run the training notebook either in Google Colab or on your laptop with CUDA and cuDNN installed. The model takes care of downloading the dataset and setting training/validation paths. Go into yolov5/runs/train/expX/weights (replace *X* with your most recent training run number) to get your learned weights from the training.
 
 ### Running
-wip
+Import the weights file into the working directory where all the scripts are located, and run the Analyze_Footage  ........!!!!!
