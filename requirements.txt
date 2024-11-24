@@ -6,4 +6,4 @@ click==8.1.7
 gunicorn==23.0.0
 torch==2.5.1
 torchvision==0.20.1
-opencv-python==4.9.0.80
+opencv-python-headless==4.9.0.80
