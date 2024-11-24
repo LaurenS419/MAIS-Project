@@ -4,36 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOLO Security</title>
+    <title>Flask Website</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 20px 0;
-            z-index: 1000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f4f4f9;
         }
 
         .container {
-            margin-top: 120px;
-            /* Adjust based on header height */
             text-align: center;
         }
 
-        .video-container {
-            margin-top: 20px;
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .videos {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .frame-gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .frame-gallery img {
+            width: 128px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .file-upload {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -41,22 +99,68 @@
 <body>
     <div class="container">
         <h1>YOLO Security</h1>
-        <h3>Lauren Spee</h3>
-    </div>
-    <div class="container">
-        <form action="/" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" accept="video/*">
-            <button type="submit">Upload</button>
-        </form>
-        {% if filename %}
-        <div class="video-container">
-            <video width="600" controls>
-                <source src="{{ url_for('static', filename='uploads/' ~ filename) }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <h2>By Lauren Spee</h2>
+
+        {% if video_urls %}
+        <p>Original and Processed Videos:</p>
+        <div class="videos">
+            <div>
+                <p>Original Video:</p>
+                <video controls>
+                    <source src="{{ video_urls['original'] }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div>
+                <p>Processed Video:</p>
+                <video controls>
+                    <source src="{{ video_urls['processed'] }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
-        {% endif %}
+
+        <p>Extracted Frames:</p>
+        <div class="frame-gallery">
+            {% for frame_url in frames %}
+            <div>
+                <img src="{{ url_for('static', filename='frames/' + frame_url.split('/')[-1]) }}" alt="Frame">
+            </div>
+            {% endfor %}
+        </div>
     </div>
+
+    {% else %}
+    <p>Upload a video</p>
+    <form id="uploadForm" class="file-upload" action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Choose a file</label>
+        <input type="file" name="file" accept="video/*" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- loading gif - hidden by default -->
+    <div id="loading" style="display:none;">
+        <img src="{{ url_for('static', filename='loading.gif') }}" alt="Loading...">
+    </div>
+
+    {% endif %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const uploadForm = document.getElementById('uploadForm');
+            const loadingDiv = document.getElementById('loading');
+
+            if (uploadForm) {
+                uploadForm.addEventListener('submit', function (event) {
+                    // show loading gif
+                    loadingDiv.style.display = 'block';
+                });
+            } else {
+                console.error("Upload form not found");
+            }
+        });
+    </script>
+
 </body>
 
 </html>
