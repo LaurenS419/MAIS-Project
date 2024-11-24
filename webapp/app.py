@@ -3,14 +3,9 @@ from flask import Flask, render_template, request, url_for
 import os
 import cv2
 import shutil
+import torch
 
 app = Flask(__name__)
-
-@app.before_first_request
-def install_dependencies():
-    subprocess.run(["pip", "install", "torch==2.5.1", "torchvision==0.20.1"], check=True)
-
-import torch
 
 # Ensure the directories exist
 UPLOAD_FOLDER = 'static/uploads'
