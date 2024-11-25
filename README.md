@@ -14,12 +14,12 @@ The final model has a mean average precision value of 71%
 
 ### Organization
 
-This repository holds the training notebook and video processing scripts, along with the code for the webapp.
-\n```Deliverables/``` holds MAIS 202 project reports
-\n```webapps/``` holds the code to run the flask webapp
-\n```heroku_attepmts/``` contain my wip code to get this webapp running on heroku
-\n```YOLOv5_Training.ipynb``` the jupyter notebook used to train the model
-\n```process_footage.py```  the python script used to run the security footage through the model
+This repository holds the training notebook and video processing scripts, along with the code for the webapp.  
+```Deliverables/``` holds MAIS 202 project reports  
+```webapps/``` holds the code to run the flask webapp  
+```heroku_attepmts/``` contain my wip code to get this webapp running on heroku  
+```YOLOv5_Training.ipynb``` the jupyter notebook used to train the model  
+```process_footage.py```  the python script used to run the security footage through the model  
 
 ### Possible improvements
 Given time, my plan is to get this webapp running on heroku, and improve the weights for better performance.
