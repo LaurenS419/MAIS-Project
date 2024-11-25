@@ -33,6 +33,7 @@ def process_video_with_yolo(input_path, output_video="processed_video.mp4"):
     
     # init YOLOv5 model with custom weights, change path as needed
     model = torch.hub.load('ultralytics/yolov5', 'custom', path='./best.pt')
+    model.to('cpu')
     
     cap = cv2.VideoCapture(input_path)
     second_rate = 2  # save frames every 2 seconds to avoid spam
