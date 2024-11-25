@@ -15,11 +15,11 @@ The final model has a mean average precision value of 71%
 ### Organization
 
 This repository holds the training notebook and video processing scripts, along with the code for the webapp.
-```Deliverables/``` holds MAIS 202 project reports
-```webapps/``` holds the code to run the flask webapp
-```heroku_attepmts/``` contain my wip code to get this webapp running on heroku
-```YOLOv5_Training.ipynb``` the jupyter notebook used to train the model
-```process_footage.py```  the python script used to run the security footage through the model
+\n```Deliverables/``` holds MAIS 202 project reports
+\n```webapps/``` holds the code to run the flask webapp
+\n```heroku_attepmts/``` contain my wip code to get this webapp running on heroku
+\n```YOLOv5_Training.ipynb``` the jupyter notebook used to train the model
+\n```process_footage.py```  the python script used to run the security footage through the model
 
 ### Possible improvements
 Given time, my plan is to get this webapp running on heroku, and improve the weights for better performance.
@@ -39,5 +39,5 @@ Given time, my plan is to get this webapp running on heroku, and improve the wei
      2. To get weights, go to ```yolov5/runs/train/expX/weights``` (replace X with your most recent training run number)
 2. Running
     1. Import the weights file into the root directory of this project
-    2. Download a video you want processed into the root directory, and make sure the paths in process_footage.py are right
-    3. Run process_footage.py
+    2. Download a video you want processed into the root directory, and make sure the paths in ```process_footage.py``` are right
+    3. Run ```process_footage.py```
