@@ -32,12 +32,11 @@ Given time, my plan is to get this webapp running on heroku, and improve the wei
 
 ## How to run
 
-### Webapp
-
 Make sure you have the following installed on your system:
 - Python 3.11 or later
 - `ffmpeg` (for video processing)
 
+### Webapp
 1. Clone this repository with ```git clone https://github.com/LaurenS419/Yolo-Security```
 2. Navigate to ```/webapp```
 3. Download the dependencies via ```pip install -r requirements.txt```
