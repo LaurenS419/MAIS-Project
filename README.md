@@ -38,11 +38,11 @@ Make sure you have the following installed on your system:
 - Python 3.11 or later
 - `ffmpeg` (for video processing)
 
-1. Clone this repository
+1. Clone this repository with ```git clone https://github.com/LaurenS419/Yolo-Security```
 2. Navigate to ```/webapp```
 3. Download the dependencies via ```pip install -r requirements.txt```
 4. Run the app with ```flask run```
-5. It should give you a locally hosted link to access the site
+5. The app will be accessible at ```http://127.0.0.1:5000```
 
 ### Scripts
 1. Training
