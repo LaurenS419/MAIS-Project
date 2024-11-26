@@ -1,6 +1,6 @@
 flask==3.1.0
-torch @ http://download.pytorch.org/whl/cpu/torch-2.5.1+cpu-cp310-cp310-linux_x86_64.whl
-torchvision @ http://download.pytorch.org/whl/cpu/torchvision-0.20.1+cpu-cp310-cp310-linux_x86_64.whl
+torch==2.1.0+cpu --index-url https://download.pytorch.org/whl/cpu
+torchvision==0.20.1+cpu--index-url https://download.pytorch.org/whl/cpu
 opencv-python-headless==4.9.0.80
 numpy==1.26.4
 gunicorn==21.2.0
