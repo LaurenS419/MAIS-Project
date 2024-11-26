@@ -1,6 +1,8 @@
 flask==3.1.0
-torch==2.5.1  # Official CPU version of PyTorch
-torchvision==0.20.1
+#torch==2.5.1  # Official CPU version of PyTorch
+#torchvision==0.20.1
+http://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=17bbc073920e429bf23a290472d51edc75e7b9809b81a93503d10d8edb6f3a6d
+http://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=7f91a2200e352745d70e22396bd501448e28350fbdbd8d8b1c83037e25451150
 -f https://download.pytorch.org/whl/cpu
 opencv-python-headless==4.9.0.80
 numpy==1.26.4
