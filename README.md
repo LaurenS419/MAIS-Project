@@ -32,17 +32,22 @@ Given time, my plan is to get this webapp running on heroku, and improve the wei
 
 ## How to run
 
+Make sure you have the following installed on your system:
+- Python 3.11 or later
+- `ffmpeg` (for video processing)
+
 ### Webapp
-1. Clone this repository
+1. Clone this repository with ```git clone https://github.com/LaurenS419/Yolo-Security```
 2. Navigate to ```/webapp```
 3. Download the dependencies via ```pip install -r requirements.txt```
 4. Run the app with ```flask run```
-5. It should give you a locally hosted link to access the site
+5. The app will be accessible at ```http://127.0.0.1:5000```
 
 ### Scripts
 1. Training
      1. Run the training notebook either in Google Colab or on your laptop (must have an NVIDIA GPU and have CUDA and cuDNN installed)
-     2. To get weights, go to ```yolov5/runs/train/expX/weights``` (replace X with your most recent training run number)
+          - if you're using your laptop, you must use a python virtual environment with a version that's compatible with the versions of CUDA and cuDNN that you have
+     3. To get weights, go to ```yolov5/runs/train/expX/weights``` (replace X with your most recent training run number)
 2. Running
     1. Import the weights file into the root directory of this project
     2. Download a video you want processed into the root directory, and make sure the paths in ```process_footage.py``` are right
