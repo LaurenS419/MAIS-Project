@@ -6,6 +6,8 @@ YOLO Security is a home security application that harnesses the power of compute
 
 Currently, the prototype is run on a web app, with a place where the user can upload a video of their own to see the model in action.
 
+For the project showcase, the site is hosted here: https://7570-173-179-6-22.ngrok-free.app/ . Beware, due to computing constraints, it's very slow.
+
 ## Information
 The product uses the YOLOv5 model, a lightweight and fast object-detection model that can run in real-time. It was trained on the Pascal VOC 2007 and 2012 datasets to generate weights and optimize hyperparameters. The model is used to identify objects, classify them, and render bounding boxes on video frames as it's happening.
 
