@@ -30,12 +30,12 @@ This repository holds the training notebook and video processing scripts, along 
   
 
 ### Possible improvements
-Given time, my plan is to get this webapp running on heroku, and improve the weights for better performance.
+Given time, my plan is to get this webapp running on a "real" domain hosted on a stronger computer, and improve the weights for better performance.
 
 ## How to run
 
 Make sure you have the following installed on your system:
-- Python 3.11 or later
+- Python 3.10 or later
 - `ffmpeg` (for video processing)
 
 ### Webapp
